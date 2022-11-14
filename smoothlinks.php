@@ -8,6 +8,10 @@
  * Text Domain: smoothlinks
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 add_filter( 'bp_get_the_thread_message_content', 'bp_message_link_clickable_with_target', 99 ); 
 function bp_message_link_clickable_with_target( $message ) {
      $message = preg_replace( '/<a /','<a target="_blank" ', make_clickable( $message ) );
